@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+
+        function vm1() {
+            var vm =
+            {
+                "subscriptionId": "8d7fc01f-bcea-4354-8ff6-ce2d070b2ac5",
+                "resourcegroupName": "azvcmsfsrg",
+                "virtualmachineName": "myVM",
+                "apiVersion": "2017-12-01"
+            }
+            alert("started!")
+          
+            $.ajax({
+                type: "POST",
+                crossDomain: true,
+                url: "http://localhost:51757/api/Values/CreateVM",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: vm,
+                success: function (data, status, xhr) {
+                    alert("success!");
+                }
+            });
+        }
+
+
+                    //alert(JSON.stringify(data));
+    </script>
+    <title></title>
+</head>
+<body>
+    <div>
+        <button onclick="vm1()">cretw vm</button>
+    </div>
+</body>
+</html>
